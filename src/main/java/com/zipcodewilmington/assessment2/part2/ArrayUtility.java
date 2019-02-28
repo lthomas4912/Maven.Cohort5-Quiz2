@@ -1,6 +1,7 @@
 package com.zipcodewilmington.assessment2.part2;
 
-import com.j256.ormlite.stmt.query.In;
+
+
 
 public class ArrayUtility {
     public Integer[] merge(Integer[] array1, Integer[] array2) {
@@ -16,44 +17,37 @@ public class ArrayUtility {
     }
 
     public Integer[] rotate(Integer[] array, Integer index) {
-        Integer [] result = new Integer[array.length];
-            for(int i = 0; i < array.length-1; i++){
-            result = new Integer[(i+index) % array.length];
+      Integer [] result = new Integer[array.length];
+        for(int i = 0; i < index; i++){
+            result[i] = array[index];
+          for(int j = index-1; j < array.length; j++){
+              result[j]= array[index];
 
+          }
+      }
+      return result;
     }
-            return result;
-}
 
     public Integer countOccurrence(Integer[] array1, Integer[] array2, Integer valueToEvaluate) {
         Integer count = 0;
-        Integer count2= 0;
+        Integer counter = 0;
         Integer result = 0;
-        for (int i = 0; i < array1.length; i++) {
-            count++;
-            for (int j = 0; j < array2.length; j++) {
-                count2++;
-                if (array1[i] == valueToEvaluate & array2[j] == valueToEvaluate) {
-                   result = count + count2;
-                }
-
+        for (Integer i = 0; i < array1.length; i++) {
+            if (array1[i] == valueToEvaluate) {
+                count++;
             }
-        } return result;
-    }
-
-
-            public Integer mostCommon (Integer[]array){
-
-        Integer result = array.length;
-            Integer count=0;
-
-            for(int i = 0; i < array.length; i ++)
-            for (Integer num : array){
-                    count++;
-                    num = count;
-                if(count > result){
-                    result = count;
-                }
-            } return result;
         }
-
+        for (Integer j = 0; j < array2.length; j++) {
+            if (array2[j] == valueToEvaluate) {
+                count++;
+            }
+        }
+        return count;
     }
+
+
+    public Integer mostCommon(Integer[] array) {
+
+        return null;
+    }
+}

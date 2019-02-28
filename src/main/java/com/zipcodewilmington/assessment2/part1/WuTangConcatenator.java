@@ -4,35 +4,32 @@ import com.j256.ormlite.stmt.query.In;
 
 public class WuTangConcatenator {
 
+    private Integer result = 0;
+
     public WuTangConcatenator(Integer input) {
 
-          input = isWu().compareTo(isTang());
+         result = input;
     }
 
 
     public Boolean isWu() {
-       Integer input = Integer.MAX_VALUE;
-
-        if (input%3 == 0){
+        if (result % 3 == 0) {
             return true;
-        }else {
+   } else {
             return false;
         }
-
-
     }
 
     public Boolean isTang() {
-        Integer input = Integer.MAX_VALUE;
-        if(input%5 == 0){
-           return true;
-       }else {
-           return false;
-       }
+           if(result%5 == 0){
+               return true;
+           }else{
+               return false;
+           }
     }
 
     public Boolean isWuTang() {
-        Integer input = Integer.MAX_VALUE;
+
         if(isWu() && isTang()){
             return true;
         }else{

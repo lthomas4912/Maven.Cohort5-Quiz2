@@ -25,9 +25,10 @@ public class BasicUtilities {
     }
 
     public Boolean startsWith(String string, Character character) {
-        if(string.startsWith(string,character)){
+            String result = string.toLowerCase();
+        if(string.indexOf(character) == 0 || result.indexOf(character) == 0){
             return true;
-        } else{
+        }else {
             return false;
         }
     }
