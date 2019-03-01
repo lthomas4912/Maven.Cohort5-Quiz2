@@ -1,16 +1,18 @@
 package com.zipcodewilmington.assessment2.part2;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class ListUtility {
 
-    List<Integer> list = new ArrayList<>();
+    ArrayList<Integer> list = new ArrayList<>();
 
     public Boolean add(int i) {
-
-        return list.add(i);
+     return list.add(i);
     }
 
     public Integer size() {
@@ -18,16 +20,20 @@ public class ListUtility {
     }
 
     public List<Integer> getUnique() {
-        Integer result = 0;
-        return null;
+
+        return (ArrayList) list.stream().distinct().collect(Collectors.toList());
     }
 
     public String join() {
-        return null;
+         String result = list.toString().replace("[", "").replace("]", "");
+         return result;
     }
 
     public Integer mostCommon() {
-        return null;
+
+        Integer[] result = new Integer[list.size()];
+        ArrayUtility array = new ArrayUtility();
+        return array.mostCommon(list.toArray(result));
     }
 
     public Boolean contains(Integer valueToAdd) {

@@ -1,7 +1,8 @@
 package com.zipcodewilmington.assessment2.part2;
 
 
-
+import java.lang.reflect.Array;
+import java.util.Arrays;
 
 public class ArrayUtility {
     public Integer[] merge(Integer[] array1, Integer[] array2) {
@@ -17,37 +18,34 @@ public class ArrayUtility {
     }
 
     public Integer[] rotate(Integer[] array, Integer index) {
-      Integer [] result = new Integer[array.length];
-        for(int i = 0; i < index; i++){
-            result[i] = array[index];
-          for(int j = index-1; j < array.length; j++){
-              result[j]= array[index];
+       Integer [] result = Arrays.copyOfRange(array, index, array.length);
+       Integer [] result1 = Arrays.copyOfRange(array, 0, index);
+       return merge(result,result1);
 
-          }
-      }
-      return result;
-    }
+
+     }
+
 
     public Integer countOccurrence(Integer[] array1, Integer[] array2, Integer valueToEvaluate) {
-        Integer count = 0;
-        Integer counter = 0;
-        Integer result = 0;
-        for (Integer i = 0; i < array1.length; i++) {
+      Integer count = 0;
+      for (Integer i = 0; i < array1.length; i++) {
             if (array1[i] == valueToEvaluate) {
-                count++;
-            }
-        }
-        for (Integer j = 0; j < array2.length; j++) {
-            if (array2[j] == valueToEvaluate) {
-                count++;
-            }
-        }
+               count++; }
+        } for (Integer j = 0; j < array2.length; j++) {
+           if (array2[j] == valueToEvaluate) {
+               count++; }
+       }
         return count;
     }
 
 
     public Integer mostCommon(Integer[] array) {
-
-        return null;
+        Integer common = array[0];
+        for(Integer integer : array){
+            if(countOccurrence(array,array,integer) > countOccurrence(array,array, common)){
+                common = integer;
+            }
+        }
+        return common;
     }
 }
