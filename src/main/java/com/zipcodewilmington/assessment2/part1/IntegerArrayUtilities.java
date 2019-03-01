@@ -9,10 +9,11 @@ public class IntegerArrayUtilities {
             return false;
         }
     }
+    //array.length%2 ==0;
 
     public Integer[] range(int start, int stop) {
-        int length = stop - start;
-        Integer [] result = new Integer[length + 1];
+        int length = stop - start +1;
+        Integer [] result = new Integer[length];
         if (length > 0) {
             for (int i = 0; i < result.length; i++) {
                 result[i] = start++;
@@ -22,22 +23,10 @@ public class IntegerArrayUtilities {
         return result;
     }
     public Integer getSumOfFirstTwo(Integer[] array) {
-        Integer num = 0;
-        for (int i = 0; i < array.length; i++) {
-
-            num = array[0] + array[1];
-
-        }
-        return num;
-    }
+        return array[0] + array[1];
+     }
 
     public Integer getProductOfFirstTwo(Integer[] array) {
-        Integer num = 0;
-        for (int i = 0; i < array.length; i++) {
+        return array[0] * array[1]; }
 
-            num = array[0] * array[1];
-
-        }
-        return num;
     }
-}

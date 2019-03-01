@@ -13,20 +13,10 @@ public class WuTangConcatenator {
 
 
     public Boolean isWu() {
-        if (result % 3 == 0) {
-            return true;
-   } else {
-            return false;
-        }
-    }
+        return result % 3 == 0;}
 
     public Boolean isTang() {
-           if(result%5 == 0){
-               return true;
-           }else{
-               return false;
-           }
-    }
+     return result%5 == 0;}
 
     public Boolean isWuTang() {
 

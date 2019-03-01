@@ -30,6 +30,8 @@ public class BasicUtilities {
             return true;
         }else {
             return false;
-        }
+        }//string.toLowercase();
+        //character.toString().toLowerCase();
+        // lowerCaseString.startsWith(lowerCase);
     }
 }
